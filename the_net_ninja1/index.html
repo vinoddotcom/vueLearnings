@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hello, Vue:)</h1>
+    <div id="app">
+        <div v-if="showBooks">
+            <h2>{{ title }} - {{ author }} -{{ age }}</h2>
+        </div>
+        <button @click="showToogleBooks">
+            <span v-if="showBooks">HIDE BOOKS</span>
+            <!-- <span v-if="!showBooks">Show BOOKS</span> -->
+            <span v-else>Show BOOKS</span>
+
+        </button>
+        <div v-if="showBooks">Currently Showing Books</div>
+        
+        <!-- <button v-on:click="age++">Increase Age</button>
+        <button v-on:click="age--">Dicrease Age</button>
+        <button @click="changeTitle('Oathbringer')">Chang Title</button> -->
+    </div>
+    
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

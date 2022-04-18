@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3"></script>
+    <title>Document</title>
+    <style>
+      .box{
+          padding: 100px, 0;
+          width: 400px;
+          height: 350px;
+          text-align: center;
+          background: #ddd;
+          margin: 20px;
+          display:inline-block;
+          align-items: center;
+      }
+
+
+    </style>
+  </head>
+
+  <body>
+    <h1>Hello, Vue:)</h1>
+    <div id="app">
+      <div v-if="showBooks">
+        <h2>{{ title }} - {{ author }} -{{ age }}</h2>
+      </div>
+      <button @click="showToogleBooks">
+        <span v-if="showBooks">HIDE BOOKS</span>
+        <!-- <span v-if="!showBooks">Show BOOKS</span> -->
+        <span v-else>Show BOOKS</span>
+      </button>
+
+
+      <br>
+      <!-- mouse events -->
+
+    <div class="box" @mouseover="handelMOuseEnterEvent($event,5)">Mouse (Enter)</div>
+    <div class="box" @mouseleave="handelMOuseEnterEvent">Mouse (leave)</div>
+    <div class="box" @dblclick="handelMOuseEnterEvent"> Mouse (Click)</div>
+    <div class="box" @mousemove="handleMouseMoveEvent">Position - {{x}} {{y}}</div>
+
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

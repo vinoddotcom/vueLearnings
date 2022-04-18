@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3"></script>
+    <title>Document</title>
+    <style>
+        body{
+            background: #eee;
+            max-width: 960PX;
+            margin:20px auto ;
+        }
+        li{
+            list-style-type: none;
+            background: #fff;
+            margin: 20px auto;
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        li.fav{
+            background: pink;
+            color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hello, Vue:)</h1>
+    <div id="app">
+        <a v-bind:href="url">best website ever</a>
+        <!-- <p>{{computedValue}}</p> -->
+        <ul>
+            <li v-for="item in filteredBook" :class="{fav: item.isFav}" @click="handelFav($event, item.id)"> 
+                <img :src="item.imgName" alt="" width="200" >
+                <h3>{{item.title}}</h3>
+                <p>{{item.author}}</p>
+            </li>
+        </ul>
+        <!-- <button @click="showToogleBooks"> -->
+            <button>
+            <span v-if="showBooks">HIDE BOOKS</span>
+            <!-- <span v-if="!showBooks">Show BOOKS</span> -->
+            <span v-else>Show BOOKS</span>
+        </button>
+
+
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
